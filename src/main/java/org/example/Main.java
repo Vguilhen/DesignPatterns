@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.facade.Facade;
 import org.example.simgleton.SingletonEager;
 import org.example.simgleton.SingletonLazy;
 import org.example.simgleton.SingletonLazyHolder;
@@ -27,5 +28,11 @@ public class Main {
         System.out.println(holder);
         holder = SingletonLazyHolder.getInstance();
         System.out.println(holder);
+
+
+        //Facade
+
+        Facade facade = new Facade();
+        facade.migrarCliente("Veneclinton", "080050005");
     }
 }
