@@ -4,6 +4,7 @@ import org.example.facade.Facade;
 import org.example.simgleton.SingletonEager;
 import org.example.simgleton.SingletonLazy;
 import org.example.simgleton.SingletonLazyHolder;
+import org.example.strategy.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -34,5 +35,24 @@ public class Main {
 
         Facade facade = new Facade();
         facade.migrarCliente("Veneclinton", "080050005");
+
+        //Strategy
+
+        Comportamento defensivo = new ComportamentoDefensivo();
+        Comportamento normal = new ComportamentoNormal();
+        Comportamento agressivo = new ComportamentoAgressivo();
+
+        Robo robo = new Robo();
+        robo.setStrategy(normal);
+        robo.mover();
+        robo.mover();
+        robo.setStrategy(defensivo);
+        robo.mover();
+        robo.setStrategy(agressivo);
+        robo.mover();
+        robo.mover();
+        robo.mover();
+
+
     }
 }
